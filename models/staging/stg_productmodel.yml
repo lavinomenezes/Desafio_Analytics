@@ -1,0 +1,17 @@
+version: 2
+
+
+models:
+  - name: productmodel
+    description: "Product model data"
+    columns:
+      - name: productmodelid
+        description: "Product model id"
+        tests:
+          - unique
+          - not_null
+      - name: product_model_name  
+        description: "Product model name"
+        tests:
+          - not_null  
+
