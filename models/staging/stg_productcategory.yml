@@ -1,0 +1,15 @@
+version: 2
+
+models: 
+- name: stg_productcategory
+  description: "Product category data"
+  columns:
+    - name: productcategoryid
+      description: "Product category id"
+      tests:
+        - unique
+        - not_null
+    - name: name
+      description: "Product category name"
+      tests:
+        - not_null
