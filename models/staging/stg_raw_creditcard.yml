@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_raw_creditcard
+    description: "Customer credit card data"
+    columns:
+      - name: creditcardid
+        description: "Credit card id"
+        tests:
+          - unique
+          - not_null
+      - name: cardtype
+        description: "Credit card type"
+        tests:
+          - not_null
+      - name: cardnumber
+        description: "Credit card number"
+        tests:
+          - unique
+          - not_null
+      - name: expmonth
+        description: "Credit card expiration month"
+        tests:
+          - not_null  
+      - name: expyear
+        description: "Credit card expiration year"
+        tests:
+          - not_null
+

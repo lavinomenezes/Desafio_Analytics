@@ -1,0 +1,32 @@
+version: 2
+
+models: 
+  - name: dim_creditcard
+    description: "Customer credit card dimension data"
+    columns:
+      - name: creditcardid
+        description: "Credit card id"
+        tests:
+          - unique
+          - not_null
+      - name: cardtype
+        description: "Credit card type"
+        tests:
+          - not_null
+      - name: cardnumber
+        description: "Credit card number"
+        tests:
+          - unique
+          - not_null
+      - name: expmonth
+        description: "Credit card expiration month"
+        tests:
+          - not_null  
+      - name: expyear
+        description: "Credit card expiration year"
+        tests:
+          - not_null
+      - name: modified_date
+        description: "Credit card modified date"
+        tests:
+          - not_null

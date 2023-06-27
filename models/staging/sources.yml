@@ -1,0 +1,269 @@
+version: 2
+
+sources:
+  - name: dev_lavino
+    description: "Tabelas de dados do desafio analytics"
+    schema: dev_lavino
+    tables:
+# dim creditcard
+      - name: creditcard
+        description: "Customer credit card data"
+        columns:
+          - name: creditcardid
+            description: "Credit card id"
+            tests:
+              - unique
+          - name: cardtype
+            description: "Credit card type"
+            tests:
+              - not_null
+          - name: cardnumber
+            description: "Credit card number"
+            tests:
+              - unique
+              - not_null
+          - name: expmonth
+            description: "Credit card expiration month"
+            tests:
+              - not_null
+          - name: expyear
+            description: "Credit card expiration year"
+            tests:
+              - not_null
+# dim products
+      - name: product
+        description: "Product data"
+        columns:
+          - name: productid
+            description: "Product id"
+            tests:
+              - unique
+              - not_null
+          - name: productsubcategoryid
+            description: "Product subcategory id"
+            tests:
+              - not_null
+          - name: productmodelid 
+            description: "Product model id"
+            tests:
+              - not_null
+          - name: name
+            description: "Product name"
+            tests:
+              - not_null
+          - name: size
+            description: "Product size"
+            tests:
+              - not_null
+          - name: listprice
+            description: "Product list price"
+            tests:
+              - not_null
+      - name: productcategory
+        description: "Product category data"
+        columns:
+          - name: productcategoryid
+            description: "Product category id"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Product category name"
+            tests:
+              - not_null
+      - name: productsubcategory 
+        description: "Product subcategory data"
+        columns:
+          - name: productsubcategoryid
+            description: "Product subcategory id"
+            tests:
+              - unique
+              - not_null
+          - name: productcategoryid
+            description: "Product category id"
+            tests:
+              - not_null
+          - name: name
+            description: "Product subcategory name"
+            tests:
+              - not_null
+      - name: productmodel
+        description: "Product model data"
+        columns:
+          - name: productmodelid
+            description: "Product model id"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Product model name"
+            tests:
+              - not_null
+# dim clients
+      - name: salesorderheader
+        description: "Sales order header data"
+        columns:
+          - name: customerid
+            description: "Customer unique identifier"
+            tests:
+              - not_null
+          - name: shiptoaddressid
+            description: "Ship to address id"
+            tests:
+              - not_null
+          - name: creditcardid
+            description: "Credit card id"
+            tests:
+              - not_null
+      - name: personcreditcard
+        description: "Person credit card data"
+        columns:
+          - name: creditcardid
+            description: "Credit card id"
+            tests:
+              - not_null
+          - name: businessentityid
+            description: "Business entity id"
+            tests:
+              - not_null
+      - name: person
+        description: "Person data"
+        columns:
+          - name: businessentityid
+            description: "Business entity id"
+            tests:
+              - unique
+              - not_null
+          - name: firstname
+            description: "Person first name"
+            tests:
+              - not_null
+          - name: lastname
+            description: "Person last name"
+            tests:
+              - not_null
+      - name: personphone
+        description: "Person phone data"
+        columns:
+          - name: businessentityid
+            description: "Business entity id"
+            tests:
+              - not_null
+          - name: phonenumber
+            description: "Person phone number"
+            tests:
+              - not_null
+      - name: emailaddress
+        description: "Email address data"
+        columns:
+          - name: businessentityid
+            description: "Business entity id"
+            tests:
+              - not_null
+          - name: emailaddress
+            description: "Email address"
+            tests:
+              - not_null
+      - name: address
+        description: "Address data"
+        columns:
+          - name: addressid
+            description: "Address id"
+            tests:
+              - unique
+              - not_null
+          - name: city
+            description: "Address city"
+            tests:
+              - not_null
+          - name: postalcode
+            description: "Address postal code"
+            tests:
+              - not_null
+          - name: stateprovinceid
+            description: "Address state province id"
+            tests:
+              - not_null
+      - name: stateprovince
+        description: "State province data"
+        columns:
+          - name: stateprovinceid
+            description: "State province id"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "State province name"
+            tests:
+              - not_null
+          - name: countryregioncode
+            description: "State province country region code"
+            tests:
+              - not_null
+      - name: countryregion
+        description: "Country region data"
+        columns:
+          - name: countryregioncode
+            description: "Country region code"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Country region name"
+            tests:
+              - not_null
+      - name: businessentityaddress
+        description: "Business entity address data"
+        columns:
+          - name: addressid
+            description: "Address id"
+            tests:
+              - not_null
+      - name: addresstype
+        description: "Address type data"
+        columns:
+          - name: addresstypeid
+            description: "Address type id"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Address type name"
+            tests:
+              - not_null
+#dim sales resason
+      - name: salesreason
+        description: "Sales reason data"
+        columns:
+          - name: salesreasonid
+            description: "Sales reason id"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Sales reason name"
+            tests:
+              - not_null
+          - name: reasontype
+            description: "Sales reason type"
+            tests:
+              - not_null  
+
+
+
+
+
+
+               
+
+
+
+
+
+# dim sales reason
+
+
+
+
+# fact
+

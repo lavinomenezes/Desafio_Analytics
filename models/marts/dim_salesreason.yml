@@ -1,0 +1,24 @@
+version: 2
+
+
+models:
+  - name: dim_salesreason
+    description: "Sales reason data" 
+    columns:
+      - name: salesreasonid
+        description: "Sales reason id"
+        tests:
+          - unique
+          - not_null
+      - name: reason
+        description: "Sales reason name"
+        tests:
+          - not_null
+      - name: reasontype
+        description: "Sales reason type"
+        tests:
+          - not_null
+      - name: modified_date
+        description: "Sales reason modified date"
+        tests:
+          - not_null
