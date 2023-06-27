@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: stg_product
+    description: "Product data"
+    columns:
+      - name: productid
+        description: "Product id"
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Product name"
+        tests:
+          - not_null
+      - name: productsubcategoryid
+        description: "Product subcategory id"
+        tests:
+          - not_null
+      - name: productmodelid 
+        description: "Product model id"
+        tests:
+          - not_null
+      - name: size
+        description: "Product size"
+        tests:
+          - not_null
+      - name: reference_price
+        description: "Product reference price"
+        tests:
+          - not_null
