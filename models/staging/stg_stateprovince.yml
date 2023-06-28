@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: stg_stateprovince
+    description: "State province data"
+    columns:
+      - name: stateprovinceid
+        description: "State province id"
+        tests:
+          - unique
+          - not_null
+      - name: name
+        description: "State province name"
+        tests:
+          - not_null
+      - name: countryregioncode
+        description: "State province country region code"
+        tests:
+          - not_null

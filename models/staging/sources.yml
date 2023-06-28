@@ -219,6 +219,10 @@ sources:
             description: "Address id"
             tests:
               - not_null
+          - name: addresstypeid
+            description: "Address type id"
+            tests:
+              - not_null
       - name: addresstype
         description: "Address type data"
         columns:

@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: stg_countryregion
+    description: "Country region data"
+    columns:
+      - name: countryregioncode
+        description: "Country region code"
+        tests:
+          - unique
+          - not_null
+      - name: country
+        description: "Country region name"
+        tests:
+          - not_null

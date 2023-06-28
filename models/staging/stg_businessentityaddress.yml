@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_businessentityaddress
+    description: "Business entity address data"
+    columns:
+      - name: addressid
+        description: "Address id"
+        tests:
+          - not_null
+      - name: addresstypeid
+        description: "Address type id"
+        tests:
+          - not_null

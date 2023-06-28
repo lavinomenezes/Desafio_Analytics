@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_salesorderheader
+    description: "Sales order header data"
+    columns:
+      - name: customerid
+        description: "Customer unique identifier"
+        tests:
+          - not_null
+      - name: shiptoaddressid
+        description: "Ship to address id"
+        tests:
+          - not_null
+      - name: creditcardid
+        description: "Credit card id"
+        tests:
+          - not_null

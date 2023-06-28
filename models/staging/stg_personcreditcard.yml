@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_personcreditcard
+    description: "Person credit card identifier data"
+    columns:
+      - name: creditcardid
+        description: "Credit card id"
+        tests:
+          - not_null
+      - name: businessentityid
+        description: "Business entity id"
+        tests:
+          - not_null
