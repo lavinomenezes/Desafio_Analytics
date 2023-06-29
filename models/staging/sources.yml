@@ -113,6 +113,19 @@ sources:
               - not_null
           - name: creditcardid
             description: "Credit card id"
+            tests:  
+              - not_null
+          - name: salesorderid,
+            description: "Sales reason id"  
+            tests:
+              - unique
+              - not_null
+          - name: status
+            description: "Sales order status"
+            tests:
+              - not_null
+          - name: orderdate
+            description: "Sales order date"
             tests:
               - not_null
       - name: personcreditcard
@@ -251,7 +264,42 @@ sources:
           - name: reasontype
             description: "Sales reason type"
             tests:
-              - not_null  
+              - not_null
+      - name: salesorderdetail 
+        description: "Sales order detail data"
+        columns:
+          - name: salesorderid
+            description: "Sales order id"
+            tests:
+              - not_null
+          - name:  productid
+            description: "Product id"
+            tests:
+              - not_null
+          - name: orderqty
+            description: "Order quantity"
+            tests:
+              - not_null
+          - name: unitprice 
+            description: "Unit price"
+            tests:
+              - not_null
+          - name: unitpricediscount 
+            description: "Unit price discount"
+            tests:
+              - not_null
+      - name: salesorderheadersalesreason
+        description: "Sales order header sales reason data"
+        columns:
+          - name: salesorderid
+            description: "Sales order id"
+            tests:
+              - not_null
+          - name: salesreasonid
+            description: "Sales reason id"
+            tests:
+              - not_null
+
 
 
 

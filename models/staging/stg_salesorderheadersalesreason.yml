@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_salesorderheadersalesreason
+    description: "Sales order header sales reason data"
+    columns:
+      - name: salesorderid
+        description: "Sales order id"
+        tests:
+          - not_null
+      - name: salesreasonid
+        description: "Sales reason id"
+        tests:
+          - not_null

@@ -1,0 +1,26 @@
+version: 2
+
+models:
+- name: stg_salesorderdetail 
+  description: "Sales order detail data"
+  columns:
+    - name: salesorderid
+      description: "Sales order id"
+      tests:
+        - not_null
+    - name:  productid
+      description: "Product id"
+      tests:
+        - not_null
+    - name: orderqty
+      description: "Order quantity"
+      tests:
+        - not_null
+    - name: unitprice 
+      description: "Unit price"
+      tests:
+        - not_null
+    - name: unitpricediscount 
+      description: "Unit price discount"
+      tests:
+        - not_null

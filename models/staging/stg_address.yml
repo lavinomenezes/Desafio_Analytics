@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_address
+    description: "Address data"
+    columns:
+      - name: addressid
+        description: "Address id"
+        tests:
+          - unique
+          - not_null
+      - name: city
+        description: "Address city"
+        tests:
+          - not_null
+      - name: postalcode
+        description: "Address postal code"
+        tests:
+          - not_null
+      - name: stateprovinceid
+        description: "Address state province id"
+        tests:
+          - not_null

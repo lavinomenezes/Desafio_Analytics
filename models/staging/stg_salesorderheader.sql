@@ -2,7 +2,10 @@ with salesorderheader as(
     select
         customerid,
         shiptoaddressid,
-        creditcardid
+        creditcardid,
+        salesorderid,
+        status,
+        orderdate
     from {{ source('dev_lavino','salesorderheader')}}
 )
 select *

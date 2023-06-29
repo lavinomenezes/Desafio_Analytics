@@ -16,3 +16,16 @@ models:
         description: "Credit card id"
         tests:
           - not_null
+      - name: salesorderid,
+        description: "Sales reason id"
+        tests:
+          - unique
+          - not_null
+      - name: status
+        description: "Sales order status"
+        tests:
+          - not_null
+      - name: orderdate
+        description: "Sales order date"
+        tests:
+          - not_null
