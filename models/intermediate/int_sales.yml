@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: int_sales
+    description: "Intermediate sales data"
+    columns:
+      - name: salesorderid
+        description: "Sales order id"
+        tests:
+          - unique
+          - not_null
+      - name: customerid
+        description: "Customer id"
+        tests:
+          - not_null
+      - name: productid
+        description: "Product id"
+        tests:
+          - not_null
+      - name: creditcardid
+        description: "Credit card id"
+        tests:
+          - not_null
+      - name: salesreasonid
+        description: "Sales reason id"
+        tests:
+          - not_null
+      - name: status
+        description: "Sales order status"
+        tests:
+          - not_null
+      - name: orderqty
+        description: "Order quantity"
+        tests:
+          - not_null
+      - name: unitprice
+        description: "Unit price"
+        tests:
+          - not_null
+      - name: unitpricediscount
+        description: "Unit price discount"
+        tests:
+          - not_null
+      - name: gross_value
+        description: "Gross value"
+        tests:
+          - not_null
+      - name: net_value
+        description: "Net value"
+        tests:
+          - not_null
+      - name: orderdate
+        description: "Order date"
+        tests:
+          - not_null
