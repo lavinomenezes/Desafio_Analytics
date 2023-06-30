@@ -1,8 +1,8 @@
-with emailaddress as (
+with email_address as (
     select
         businessentityid,
-        emailaddress
+        emailaddress.emailaddress as person_emailaddress
     from {{ source('dev_lavino','emailaddress')}}
 )
 select *
-from emailaddress
+from email_address
