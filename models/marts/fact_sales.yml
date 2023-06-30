@@ -53,3 +53,7 @@ models:
         description: "Order date"
         tests:
           - not_null
+      - name: modified_date
+        description: "Sales order modified date"
+        tests:
+          - not_null

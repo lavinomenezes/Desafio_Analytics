@@ -50,3 +50,7 @@ models:
         description: "Customer country"
         tests:
           - not_null
+      - name: modified_date
+        description: "Customer modified date"
+        tests:
+          - not_null

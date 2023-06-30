@@ -33,3 +33,7 @@ models:
         description: "Product reference price"
         tests:
           - not_null
+      - name: modified_date
+        description: "Product modified date"
+        tests:
+          - not_null
