@@ -27,7 +27,7 @@ models:
         description: "Customer phone number"
         tests:
           - not_null
-      - name: emailaddress  
+      - name: person_emailaddress  
         description: "Customer email address"
         tests:
           - not_null

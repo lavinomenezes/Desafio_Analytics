@@ -49,13 +49,13 @@ with
     ),
 
     join_client as(
-        select distinct
+        select 
             salesorderheader.customerid,
             person.businessentityid, 
             person.firstname,
             person.lastname,
             personphone.phonenumber,
-            emailaddress.emailaddress,
+            emailaddress.person_emailaddress,
             address.postalcode,
             addresstype.address_type,
             address.city,	
