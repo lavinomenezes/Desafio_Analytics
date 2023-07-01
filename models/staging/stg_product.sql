@@ -5,6 +5,11 @@ with product as (
         productsubcategoryid,
         productmodelid,
         size,
+        color,
+        weight,
+        makeflag,
+        safetystocklevel,
+        reorderpoint,
         listprice as reference_price,
     from {{ source('dev_lavino','product') }}
 )

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: stg_raw_creditcard
+  - name: stg_creditcard
     description: "Customer credit card data"
     columns:
       - name: creditcardid

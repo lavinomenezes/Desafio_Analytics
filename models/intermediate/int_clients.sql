@@ -9,7 +9,7 @@ with
     ),
     creditcardid as (
         select *
-        from {{ ref('stg_raw_creditcard') }}
+        from {{ ref('stg_creditcard') }}
     ),
     personcreditcard as (
         select *

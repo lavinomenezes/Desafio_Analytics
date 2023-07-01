@@ -12,4 +12,5 @@ models:
       - name: country
         description: "Country region name"
         tests:
+          - unique
           - not_null

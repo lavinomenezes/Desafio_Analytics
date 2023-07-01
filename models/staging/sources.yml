@@ -55,6 +55,26 @@ sources:
             description: "Product size"
             tests:
               - not_null
+          - name: color
+            description: "Product color"
+            tests:
+              - not_null
+          - name: weight
+            description: "Product weight"
+            tests:
+              - not_null
+          - name: makeflag
+            description: "Product make flag"
+            tests:
+              - not_null
+          - name: safetystocklevel
+            description: "Product safety stock level"
+            tests:
+              - not_null
+          - name: reorderpoint
+            description: "Product reorder point"
+            tests:
+              - not_null
           - name: listprice
             description: "Product list price"
             tests:
@@ -147,6 +167,10 @@ sources:
             tests:
               - unique
               - not_null
+          - name: persontype
+            description: "Person type"
+            tests:
+              - not_null
           - name: firstname
             description: "Person first name"
             tests:
@@ -164,6 +188,22 @@ sources:
               - not_null
           - name: phonenumber
             description: "Person phone number"
+            tests:
+              - not_null
+          - name: phonenumbertypeid
+            description: "Phone number type id"
+            tests:
+              - not_null
+      - name: phonenumbertype
+        description: "Person phone number type"
+        columns:
+          - name: phonenumbertypeid
+            description: "Phone number type id"
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: "Phone number type name"
             tests:
               - not_null
       - name: emailaddress
@@ -185,6 +225,12 @@ sources:
             tests:
               - unique
               - not_null
+          - name: addressline1
+            description: "Address line 1"
+            tests:
+              - not_null
+          - name: addressline2
+            description: "Address line 2"
           - name: city
             description: "Address city"
             tests:
@@ -268,6 +314,11 @@ sources:
       - name: salesorderdetail 
         description: "Sales order detail data"
         columns:
+          - name: salesorderdetailid
+            description: "Sales order detail id"
+            tests:
+              - unique
+              - not_null
           - name: salesorderid
             description: "Sales order id"
             tests:
@@ -305,17 +356,4 @@ sources:
 
 
 
-
-               
-
-
-
-
-
-# dim sales reason
-
-
-
-
-# fact
 

@@ -4,6 +4,11 @@ models:
 - name: stg_salesorderdetail 
   description: "Sales order detail data"
   columns:
+    - name: salesorderdetailid
+      description: "Sales order detail id"
+      tests:
+        - unique
+        - not_null
     - name: salesorderid
       description: "Sales order id"
       tests:

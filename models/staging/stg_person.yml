@@ -9,6 +9,10 @@ models:
         tests:
           - unique
           - not_null
+      - name: persontype
+        description: "Person type"
+        tests:
+          - not_null
       - name: firstname
         description: "Person first name"
         tests:

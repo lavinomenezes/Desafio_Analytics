@@ -5,7 +5,12 @@ with salesorderheader as(
         creditcardid,
         salesorderid,
         status,
-        orderdate
+        subtotal,
+        taxamt,
+        freight,
+        totaldue,
+        cast(orderdate as timestamp) as orderdate,
+        cast(shipdate as timestamp) as shipdate,
     from {{ source('dev_lavino','salesorderheader')}}
 )
 select *

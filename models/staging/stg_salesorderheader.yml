@@ -25,7 +25,27 @@ models:
         description: "Sales order status"
         tests:
           - not_null
+      - name: subtotal
+        description: "Sales order subtotal"
+        tests:
+          - not_null
+      - name: taxamt
+        description: "Sales order tax amount"
+        tests:
+          - not_null
+      - name: freight
+        description: "Sales order freight"
+        tests:
+          - not_null
+      - name: totaldue
+        description: "Sales order total due"
+        tests:
+          - not_null
       - name: orderdate
         description: "Sales order date"
+        tests:
+          - not_null
+      - name: shipdate
+        description: "Sales order ship date"
         tests:
           - not_null

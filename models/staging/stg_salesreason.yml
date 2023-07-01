@@ -17,7 +17,3 @@ models:
         description: "Sales reason type"
         tests:
           - not_null
-      - name: modified_date
-        description: "Sales reason modified date"
-        tests:
-          - not_null

@@ -1,6 +1,7 @@
 with 
     salesorderdetail as (
     select
+        salesorderdetailid,
         salesorderid,
         productid,
         orderqty,

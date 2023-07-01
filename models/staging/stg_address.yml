@@ -9,6 +9,12 @@ models:
         tests:
           - unique
           - not_null
+      - name: addressline1 as address_line1,
+        description: "Address line 1"
+        tests:
+          - not_null
+      - name: complement
+        description: "Address complement"
       - name: city
         description: "Address city"
         tests:

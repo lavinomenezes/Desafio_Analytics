@@ -12,3 +12,7 @@ models:
         description: "Person phone number"
         tests:
           - not_null
+      - name: phonenumbertype
+        description: "Person phone number type"
+        tests:
+          - not_null

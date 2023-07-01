@@ -1,0 +1,15 @@
+version: 2
+
+models:
+    - name: stg_phonenumbertype
+      description: "Person phone number type data"
+      columns:
+        - name: phonenumbertypeid
+          description: "Phone number type id"
+          tests:
+            - unique
+            - not_null
+        - name: phone_type
+          description: "Phone number type name"
+          tests:
+            - not_null
