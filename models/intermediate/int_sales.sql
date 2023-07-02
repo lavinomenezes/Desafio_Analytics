@@ -36,6 +36,9 @@ with
             salesorderdetail.unitpricediscount,
             (salesorderdetail.unitprice * salesorderdetail.orderqty) as gross_value,
 	        (salesorderdetail.unitprice * salesorderdetail.orderqty) * (1-salesorderdetail.unitpricediscount) as net_value,
+            salesorderheader.taxamt/(count(salesorderheader.taxamt) over (partition by salesorderheader.salesorderid)) as tax_per_order,
+            salesorderheader.freight/(count(salesorderheader.freight) over (partition by salesorderheader.salesorderid)) as freight_per_order,
+            salesorderheader.totaldue/(count(salesorderheader.totaldue) over (partition by salesorderheader.salesorderid)) as totaldue_per_order,
 	        cast(salesorderheader.orderdate as timestamp) as orderdate,
             cast(salesorderheader.shipdate as timestamp) as shipdate,
         from salesorderheader

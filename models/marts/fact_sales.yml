@@ -49,6 +49,18 @@ models:
         description: "Net value"
         tests:
           - not_null
+      - name: tax_per_order
+        description: "Tax per orderdetailid"
+        tests:
+          - not_null
+      - name: freight_per_order
+        description: "Freight per orderdetailid"
+        tests:
+          - not_null
+      - name: totaldue_per_order
+        description: "Total due per orderdetailid"
+        tests:
+          - not_null
       - name: orderdate
         description: "Order date"
         tests:

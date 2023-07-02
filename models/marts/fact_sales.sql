@@ -24,6 +24,9 @@ with
             unitpricediscount,
             gross_value,
             net_value,
+            tax_per_order,
+            freight_per_order,
+            totaldue_per_order,
             orderdate,
             shipdate,
             current_timestamp  as modified_date
