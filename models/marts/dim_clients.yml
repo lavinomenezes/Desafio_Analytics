@@ -4,36 +4,31 @@ models:
   - name: dim_clients
     description: "Dimension table for clients"
     columns:
-      - name: customerid
+      - name: customer_sk
         description: "Customer id"
         tests:
           - unique
           - not_null
-      - name: businessentityid
-        description: "Business entity id"
-        tests:
-          - unique
-          - not_null  
-      - name: firstname
-        description: "Customer first name"
-        tests:
-          - not_null
-      - name: lastname
-        description: "Customer last name"
+      - name: customer_name
+        description: "Customer name"
         tests:
           - not_null
       - name: phonenumber 
         description: "Customer phone number"
         tests:
           - not_null
-      - name: emailaddress  
+      - name: phone_type
+        description: "Customer phone type"
+        tests:
+          - not_null
+      - name: person_emailaddress 
         description: "Customer email address"
         tests:
           - not_null
-      - name: postalcode
-        description: "Customer postal code"
+      - name: address_line1
+        description: "Customer address line 1"
         tests:
-          - not_null  
+          - not_null
       - name: address_type
         description: "Customer address type"
         tests:
@@ -42,7 +37,11 @@ models:
         description: "Customer city"
         tests:
           - not_null
-      - name: state
+      - name: postalcode
+        description: "Customer postal code"
+        tests:
+          - not_null  
+      - name: state_name
         description: "Customer state"
         tests:
           - not_null

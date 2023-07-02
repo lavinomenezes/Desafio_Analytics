@@ -4,25 +4,25 @@ models:
   - name: fact_sales
     description: "Fact table for sales"
     columns:
-      - name: salesorderid
+      - name: salesorder_sk
         description: "Sales order id"
         tests:
           - unique
           - not_null
-      - name: customerid
-        description: "Customer id"
+      - name: customer_sk
+        description: "Customer sk"
         tests:
           - not_null
-      - name: productid
-        description: "Product id"
+      - name: product_sk
+        description: "Product sk"
         tests:
           - not_null
-      - name: creditcardid
-        description: "Credit card id"
+      - name: creditcard_sk
+        description: "Credit card sk"
         tests:
           - not_null
-      - name: salesreasonid
-        description: "Sales reason id"
+      - name: salesreason_sk
+        description: "Sales reason sk"
         tests:
           - not_null
       - name: status
@@ -51,6 +51,10 @@ models:
           - not_null
       - name: orderdate
         description: "Order date"
+        tests:
+          - not_null
+      - name: shipdate
+        description: "Sales order ship date"
         tests:
           - not_null
       - name: modified_date
