@@ -19,7 +19,21 @@ with
         select
             product.productid,
             product.product_name,
-            product.size,
+            case 
+                when product.size is null then 'not reported' 
+                else product.size 
+            end as size,
+            case 
+                when product.color is null then 'not reported' 
+                else product.color 
+            end as color,
+            case 
+                when product.weight is null then 0 
+                else product.weight 
+            end as weight,
+            product.makeflag,
+            product.safetystocklevel,
+            product.reorderpoint,
             product_model.product_model_name,
             product_category.product_category_name,
             product_subcategory.product_subcategory_name,

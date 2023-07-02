@@ -4,10 +4,14 @@ models:
   - name: int_sales
     description: "Intermediate sales data"
     columns:
+      - name: salesorderdetailid
+        description: "Sales order detail id"
+        tests:
+          - unique
+          - not_null
       - name: salesorderid
         description: "Sales order id"
         tests:
-          - unique
           - not_null
       - name: customerid
         description: "Customer id"
