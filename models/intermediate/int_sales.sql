@@ -7,14 +7,6 @@ with
         select *
         from {{ ref('stg_salesorderdetail') }}
     ),
-    salesreason as (
-        select *
-        from {{ ref('stg_salesreason') }}
-    ),
-    salesorderheadersalesreason as (
-        select *
-        from {{ ref('stg_salesorderheadersalesreason') }}
-    ),
     join_sales as (
         select
             salesorderdetail.salesorderdetailid,
@@ -22,7 +14,6 @@ with
             salesorderheader.customerid,
             salesorderdetail.productid,
             salesorderheader.creditcardid,
-            salesreason.salesreasonid,
             case 
                 when salesorderheader.status = 1 then 'In Process'
                 when salesorderheader.status = 2 then 'Approved'
@@ -41,10 +32,7 @@ with
             salesorderheader.totaldue/(count(salesorderheader.totaldue) over (partition by salesorderheader.salesorderid)) as totaldue_per_order,
 	        cast(salesorderheader.orderdate as timestamp) as orderdate,
             cast(salesorderheader.shipdate as timestamp) as shipdate,
-        from salesorderheader
-        left join salesorderdetail on salesorderheader.salesorderid = salesorderdetail.salesorderid
-        left join salesorderheadersalesreason on (salesorderdetail.salesorderid = salesorderheadersalesreason.salesorderid)
-        left join salesreason on (salesorderheadersalesreason.salesreasonid = salesreason.salesreasonid)
+        from salesorderheader left join salesorderdetail on salesorderheader.salesorderid = salesorderdetail.salesorderid
     )
 select *
 from join_sales
