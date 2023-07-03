@@ -350,7 +350,22 @@ sources:
             description: "Sales reason id"
             tests:
               - not_null
-
+      - name: customer  
+        description: "Customer data"
+        columns:
+          - name: customerid
+            description: "Customer id"
+            tests:
+              - unique
+              - not_null
+          - name: personid
+            description: "Person id"
+            tests:
+              - not_null
+          - name: territoryid
+            description: "Territory id"
+            tests:
+              - not_null
 
 
 

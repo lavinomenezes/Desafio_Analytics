@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: stg_customer
+    description: "Customer data"
+    columns:
+      - name: customerid
+        description: "Customer id"
+
+      - name: personid
+        description: "Person id"
+
+      - name: territoryid
+        description: "Territory id"
