@@ -10,7 +10,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: businessentityid
+      - name: personid
         description: "Business entity id"
         tests:
           - unique
@@ -37,29 +37,5 @@ models:
           - not_null
       - name: person_emailaddress  
         description: "Customer email address"
-        tests:
-          - not_null
-      - name: address_line1
-        description: "Customer address line 1"
-        tests:
-          - not_null
-      - name: address_type
-        description: "Customer address type"
-        tests:
-          - not_null
-      - name: city
-        description: "Customer city"
-        tests:
-          - not_null
-      - name: postalcode
-        description: "Customer postal code"
-        tests:
-          - not_null 
-      - name: state_name
-        description: "Customer state"
-        tests:
-          - not_null
-      - name: country
-        description: "Customer country"
         tests:
           - not_null
