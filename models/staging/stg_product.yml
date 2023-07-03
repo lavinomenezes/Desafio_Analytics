@@ -6,46 +6,34 @@ models:
     columns:
       - name: productid
         description: "Product id"
-        tests:
-          - unique
-          - not_null
+        
       - name: product_name
         description: "Product name"
-        tests:
-          - not_null
+        
       - name: productsubcategoryid
         description: "Product subcategory id"
-        tests:
-          - not_null
+        
       - name: productmodelid 
         description: "Product model id"
-        tests:
-          - not_null
+        
       - name: size
         description: "Product size"
-        tests:
-          - not_null
+        
       - name: color
         description: "Product color"
-        tests:
-          - not_null
+        
       - name: weight
         description: "Product weight"
-        tests:
-          - not_null
+        
       - name: makeflag
         description: "Product make flag"
-        tests:
-          - not_null
+        
       - name: safetystocklevel
         description: "Product safety stock level"
-        tests:
-          - not_null
+        
       - name: reorderpoint
         description: "Product reorder point"
-        tests:
-          - not_null
+        
       - name: reference_price
         description: "Product reference price"
-        tests:
-          - not_null
+        

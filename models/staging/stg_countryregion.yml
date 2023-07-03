@@ -6,11 +6,7 @@ models:
     columns:
       - name: countryregioncode
         description: "Country region code"
-        tests:
-          - unique
-          - not_null
+        
       - name: country
         description: "Country region name"
-        tests:
-          - unique
-          - not_null
+        

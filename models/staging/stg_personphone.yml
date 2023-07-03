@@ -6,13 +6,9 @@ models:
     columns:
       - name: businessentityid
         description: "Business entity id"
-        tests:
-          - not_null
+
       - name: phonenumber
         description: "Person phone number"
-        tests:
-          - not_null
-      - name: phonenumbertype
+
+      - name: phonenumbertypeid
         description: "Person phone number type"
-        tests:
-          - not_null

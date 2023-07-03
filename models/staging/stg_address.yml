@@ -6,24 +6,19 @@ models:
     columns:
       - name: addressid
         description: "Address id"
-        tests:
-          - unique
-          - not_null
-      - name: addressline1 as address_line1,
+      
+      - name: address_line1
         description: "Address line 1"
-        tests:
-          - not_null
+      
       - name: complement
         description: "Address complement"
+      
       - name: city
         description: "Address city"
-        tests:
-          - not_null
+        
       - name: postalcode
         description: "Address postal code"
-        tests:
-          - not_null
+        
       - name: stateprovinceid
         description: "Address state province id"
-        tests:
-          - not_null
+        

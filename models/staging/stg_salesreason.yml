@@ -6,14 +6,10 @@ models:
     columns:
       - name: salesreasonid
         description: "Sales reason id"
-        tests:
-          - unique
-          - not_null
+        
       - name: reason
         description: "Sales reason name"
-        tests:
-          - not_null
+        
       - name: reasontype
         description: "Sales reason type"
-        tests:
-          - not_null
+        

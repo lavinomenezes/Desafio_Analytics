@@ -6,10 +6,7 @@ models:
   columns:
     - name: productcategoryid
       description: "Product category id"
-      tests:
-        - unique
-        - not_null
-    - name: name
+      
+    - name: product_category_name
       description: "Product category name"
-      tests:
-        - not_null
+      

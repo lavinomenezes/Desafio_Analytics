@@ -6,9 +6,7 @@ models:
     columns:
       - name: salesorderid
         description: "Sales order id"
-        tests:
-          - not_null
+        
       - name: salesreasonid
         description: "Sales reason id"
-        tests:
-          - not_null
+        

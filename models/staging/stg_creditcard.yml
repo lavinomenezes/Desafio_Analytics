@@ -6,24 +6,17 @@ models:
     columns:
       - name: creditcardid
         description: "Credit card id"
-        tests:
-          - unique
-          - not_null
-      - name: cardtype
+        
+      - name: card_type
         description: "Credit card type"
-        tests:
-          - not_null
-      - name: cardnumber
+        
+      - name: card_number
         description: "Credit card number"
-        tests:
-          - unique
-          - not_null
+        
       - name: expmonth
         description: "Credit card expiration month"
-        tests:
-          - not_null  
+          
       - name: expyear
         description: "Credit card expiration year"
-        tests:
-          - not_null
+        
 

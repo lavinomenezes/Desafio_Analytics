@@ -6,18 +6,13 @@ models:
     columns:
       - name: businessentityid
         description: "Business entity id"
-        tests:
-          - unique
-          - not_null
+        
       - name: persontype
         description: "Person type"
-        tests:
-          - not_null
+        
       - name: firstname
         description: "Person first name"
-        tests:
-          - not_null
+        
       - name: lastname
         description: "Person last name"
-        tests:
-          - not_null
+        

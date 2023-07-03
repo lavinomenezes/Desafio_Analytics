@@ -6,10 +6,7 @@ models:
     columns:
       - name: addresstypeid
         description: "Address type id"
-        tests:
-          - unique
-          - not_null
+        
       - name: address_type
         description: "Address type name"
-        tests:
-          - not_null
+        

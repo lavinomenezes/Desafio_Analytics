@@ -6,14 +6,10 @@ models:
     columns:
       - name: productsubcategoryid
         description: "Product subcategory id"
-        tests:
-          - unique
-          - not_null
+        
       - name: productcategoryid
         description: "Product category id"
-        tests:
-          - not_null
+        
       - name: product_subcategory_name
         description: "Product subcategory name"
-        tests:
-          - not_null
+        

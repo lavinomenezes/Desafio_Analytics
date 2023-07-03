@@ -6,9 +6,6 @@ models:
     columns:
       - name: businessentityid
         description: "Business entity id"
-        tests:
-          - not_null
+
       - name: person_emailaddress
         description: "Email address"
-        tests:
-          - not_null

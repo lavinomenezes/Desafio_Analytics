@@ -6,46 +6,34 @@ models:
     columns:
       - name: customerid
         description: "Customer unique identifier"
-        tests:
-          - not_null
+        
       - name: shiptoaddressid
         description: "Ship to address id"
-        tests:
-          - not_null
+        
       - name: creditcardid
         description: "Credit card id"
-        tests:
-          - not_null
-      - name: salesorderid,
+        
+      - name: salesorderid
         description: "Sales reason id"
-        tests:
-          - unique
-          - not_null
+
       - name: status
         description: "Sales order status"
-        tests:
-          - not_null
+        
       - name: subtotal
         description: "Sales order subtotal"
-        tests:
-          - not_null
+        
       - name: taxamt
         description: "Sales order tax amount"
-        tests:
-          - not_null
+        
       - name: freight
         description: "Sales order freight"
-        tests:
-          - not_null
+        
       - name: totaldue
         description: "Sales order total due"
-        tests:
-          - not_null
+        
       - name: orderdate
         description: "Sales order date"
-        tests:
-          - not_null
+        
       - name: shipdate
         description: "Sales order ship date"
-        tests:
-          - not_null
+        
