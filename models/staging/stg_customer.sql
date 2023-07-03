@@ -2,6 +2,7 @@ with customer as (
     select
         customerid,
         personid,
-        territoryid,
+        territoryid
     from {{ source('dev_lavino','customer') }}        
 )
+select * from customer
