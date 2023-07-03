@@ -12,17 +12,12 @@ with
     ),
     transform as (
         select
-            MD5(cast(customerid as string)) as client_sk,
-            concat(firstName ,' ',lastName) as customer_name,
+            MD5(cast(customerid as string)) as customer_sk,
+            personid,
+            concat(firstName ,' ',lastName) as complete_name,
             phonenumber,
             phone_type,
             person_emailaddress,
-            address_line1,  
-            address_type,
-            city,
-            postalcode,
-            state_name,
-            country,
             current_timestamp  as modified_date
         from remove_duplicates
         where remove_duplicates_index = 1
