@@ -25,7 +25,7 @@ with
             safetystocklevel,
             reorderpoint,
             current_timestamp  as modified_date
-        from dim_products
+        from remove_duplicates
         where remove_duplicates_index = 1
     )
 
