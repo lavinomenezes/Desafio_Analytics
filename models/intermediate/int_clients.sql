@@ -1,19 +1,7 @@
 with 
-    salesorderheader as (
+    customer as (
         select *
-        from {{ ref('stg_salesorderheader') }}
-    ),
-    shiptoaddressid as (
-        select *
-        from {{ ref('stg_salesorderheader') }}
-    ),
-    creditcardid as (
-        select *
-        from {{ ref('stg_creditcard') }}
-    ),
-    personcreditcard as (
-        select *
-        from {{ ref('stg_personcreditcard') }}
+        from {{ ref('stg_customer') }}
     ),
     person as (
         select *
@@ -27,34 +15,14 @@ with
         select *
         from {{ ref('stg_emailaddress') }}
     ),
-    address as (
-        select *
-        from {{ ref('stg_address') }}
-    ),
-    stateprovince as (
-        select *
-        from {{ ref('stg_stateprovince') }}
-    ),
-    countryregion as (
-        select *
-        from {{ ref('stg_countryregion') }}
-    ),
-    businessentityaddress as (
-        select *
-        from {{ ref('stg_businessentityaddress') }}
-    ),
-    addresstype as (
-        select *
-        from {{ ref('stg_addresstype') }}
-    ),
     phonenumbertype as (
         select *
         from {{ ref('stg_phonenumbertype') }}
     ),
     join_client as (
         select 
-            salesorderheader.customerid,
-            person.businessentityid, 
+            customer.customerid,
+            customer.personid, 
             person.firstname,
             person.lastname,
             CASE
@@ -68,24 +36,12 @@ with
             personphone.phonenumber,
             phonenumbertype.phone_type,
             emailaddress.person_emailaddress,
-            address.address_line1,
-            addresstype.address_type,
-            address.city,
-            address.postalcode,	
-            stateprovince.state_name,
-            countryregion.country
-        from salesorderheader  
-        left join personcreditcard on (salesorderheader.creditcardid = personcreditcard.creditcardid)
-        left join person on (personcreditcard.businessentityid = person.businessentityid)
-        left join personphone on (person.businessentityid = personphone.businessentityid)
-        left join emailaddress on (person.businessentityid = emailaddress.businessentityid)
-        left join address on (salesorderheader.shiptoaddressid = address.addressid)
-        left join stateprovince on (address.stateprovinceid = stateprovince.stateprovinceid)
-        left join countryregion on (stateprovince.countryregioncode = countryregion .countryregioncode)
-        left join businessentityaddress on (businessentityaddress.addressid = address.addressid)
-        left join addresstype on (addresstype.addresstypeid = businessentityaddress.addresstypeid)
-        left join phonenumbertype on (personphone.phonenumbertypeid = phonenumbertype.phonenumbertypeid)
-        order by salesorderheader.customerid asc
+            from customer  
+            left join person  on (customer.personid  = person.businessentityid)
+		    left join personphone  on (customer.personid = personphone.businessentityid)
+		    left join phonenumbertype on (personphone.phonenumbertypeid = phonenumbertype.phonenumbertypeid)
+		    left join emailaddress on (emailaddress.businessentityid = customer.personid)
+        order by customer.customerid asc
     )
 select *
 from join_client
