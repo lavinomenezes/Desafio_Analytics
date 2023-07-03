@@ -7,7 +7,7 @@ models:
       - name: stateprovinceid
         description: "State province id"
         
-      - name: state_name
+      - name: state
         description: "State province name"
         
       - name: countryregioncode

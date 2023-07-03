@@ -1,7 +1,7 @@
 with stateprovince as (
     select
         stateprovinceid,
-        name as state_name,
+        name as state,
         countryregioncode,
     from {{ source('dev_lavino','stateprovince')}}
 )

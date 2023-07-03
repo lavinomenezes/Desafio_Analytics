@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: dim_address
+    description: "Dimension table for address"
+    columns:
+      - name: address_sk
+        description: "Address id"
+        tests:
+          - unique
+          - not_null
+      - name: address
+        description: "complete street Address"
+        tests:
+          - not_null
+      - name: address_type
+        description: "Address type"
+        tests:
+          - not_null
+      - name: postalcode
+        description: "Postal code"
+        tests:
+          - not_null
+      - name: city 
+        description: "City"
+        tests:
+          - not_null
+      - name: state
+        description: "State"
+        tests:
+          - not_null
+      - name: country
+        description: "Country"
+        tests:
+          - not_null
