@@ -4,28 +4,28 @@ models:
   - name: fact_sales
     description: "Fact table for sales"
     columns:
-      - name: salesorder_sk
+      - name: sales_sk
         description: "Sales order id"
         tests:
           - unique
           - not_null
-      - name: customer_sk
+      - name: client_sk
         description: "Customer sk"
         tests:
           - relationships:
-              to: dim_customer
+              to: ref('dim_customer')
               field: customer_sk
       - name: product_sk
         description: "Product sk"
         tests:
           - relationships:
-              to: dim_products
+              to: ref('dim_product')
               field: product_sk
       - name: creditcard_sk
         description: "Credit card sk"
         tests:
           - relationships:
-              to: dim_creditcard
+              to: ref('dim_creditcard')
               field: creditcard_sk
       - name: modified_date
         description: "Sales order modified date"
