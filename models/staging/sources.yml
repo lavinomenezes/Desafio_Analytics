@@ -135,7 +135,7 @@ sources:
             description: "Credit card id"
             tests:  
               - not_null
-          - name: salesorderid,
+          - name: salesorderid
             description: "Sales reason id"  
             tests:
               - unique
