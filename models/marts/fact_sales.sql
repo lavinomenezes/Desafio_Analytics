@@ -17,7 +17,6 @@ with
             MD5(cast(customerid as string)) as client_sk,
             MD5(cast(productid as string)) as product_sk,
             MD5(cast(creditcardid as string)) as creditcard_sk,
-            MD5(cast(salesreasonid as string)) as salesreason_sk,
             status,
             orderqty,
             unitprice,

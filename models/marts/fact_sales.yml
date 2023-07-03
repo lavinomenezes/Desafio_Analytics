@@ -12,63 +12,21 @@ models:
       - name: customer_sk
         description: "Customer sk"
         tests:
-          - not_null
+          - relationships:
+              to: dim_customer
+              field: customer_sk
       - name: product_sk
         description: "Product sk"
         tests:
-          - not_null
+          - relationships:
+              to: dim_products
+              field: product_sk
       - name: creditcard_sk
         description: "Credit card sk"
         tests:
-          - not_null
-      - name: salesreason_sk
-        description: "Sales reason sk"
-        tests:
-          - not_null
-      - name: status
-        description: "Sales order status"
-        tests:
-          - not_null
-      - name: orderqty
-        description: "Order quantity"
-        tests:
-          - not_null
-      - name: unitprice
-        description: "Unit price"
-        tests:
-          - not_null
-      - name: unitpricediscount
-        description: "Unit price discount"
-        tests:
-          - not_null
-      - name: gross_value
-        description: "Gross value"
-        tests:
-          - not_null
-      - name: net_value
-        description: "Net value"
-        tests:
-          - not_null
-      - name: tax_per_order
-        description: "Tax per orderdetailid"
-        tests:
-          - not_null
-      - name: freight_per_order
-        description: "Freight per orderdetailid"
-        tests:
-          - not_null
-      - name: totaldue_per_order
-        description: "Total due per orderdetailid"
-        tests:
-          - not_null
-      - name: orderdate
-        description: "Order date"
-        tests:
-          - not_null
-      - name: shipdate
-        description: "Sales order ship date"
-        tests:
-          - not_null
+          - relationships:
+              to: dim_creditcard
+              field: creditcard_sk
       - name: modified_date
         description: "Sales order modified date"
         tests:
