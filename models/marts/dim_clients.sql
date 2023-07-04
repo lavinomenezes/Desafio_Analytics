@@ -12,7 +12,7 @@ with
     ),
     transform as (
         select
-            MD5(cast(customerid as string)) as customer_sk,
+            cast(TO_HEX(MD5(cast(customerid as string)))as string) as customer_sk,
             personid,
             concat(firstName ,' ',lastName) as complete_name,
             phonenumber,

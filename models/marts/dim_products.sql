@@ -12,7 +12,7 @@ with
     ),
     transform as (
         select
-            MD5(cast(productid as string)) as product_sk,
+            cast(TO_HEX(MD5(cast(productid as string))) as string) as product_sk,
             product_name,
             size,
             product_model_name,

@@ -11,7 +11,7 @@ with
     ),
     creditcard_sk as (
         select
-            MD5(cast(creditcardid as string)) as creditcard_sk,
+            cast(TO_HEX(MD5(cast(creditcardid as string)))as string) as creditcard_sk,
             card_type,
             card_number,
             expmonth,

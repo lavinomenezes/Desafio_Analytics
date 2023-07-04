@@ -11,7 +11,7 @@ with
     ),
     transform as (
         select
-            MD5(cast(salesreasonid as string)) as salesreason_sk,
+            cast(TO_HEX(MD5(cast(salesreasonid as string)))as string) as salesreason_sk,
             salesorderid,
             reason,
             reasontype,

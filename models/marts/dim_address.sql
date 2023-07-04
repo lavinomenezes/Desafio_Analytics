@@ -11,7 +11,7 @@ with
     ),
     transform as (
         select
-            MD5(cast(addressid as string)) as address_sk,
+            cast(TO_HEX(MD5(cast(addressid as string)))as string) as address_sk,
             address,
             address_type,
             postalcode,
