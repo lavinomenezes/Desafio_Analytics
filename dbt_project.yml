@@ -46,7 +46,7 @@ models:
       materialized: view
       schema: staging
 
-seeds:
-  desafioanalytics:
-    source:
-      schema: dev_lavino
+# seeds:
+#   desafioanalytics:
+#     source:
+#       schema: dev_lavino
