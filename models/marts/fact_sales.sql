@@ -28,8 +28,8 @@ with
             tax_per_order,
             freight_per_order,
             totaldue_per_order,
-            orderdate,
-            shipdate,
+            cast(cast(orderdate as timestamp)as date) as orderdate,
+            cast(cast(shipdate as timestamp)as date) as shipdate,
             current_timestamp  as modified_date
         from remove_duplicates
         where remove_duplicates_index = 1

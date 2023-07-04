@@ -44,3 +44,9 @@ models:
         description: "Sales order modified date"
         tests:
           - not_null
+      - name: orderdate
+        description: Date of due.
+        tests:
+          - relationships:
+              to: ref('dim_dates')
+              field: metric_date

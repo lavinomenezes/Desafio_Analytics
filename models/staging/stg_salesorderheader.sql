@@ -9,8 +9,8 @@ with salesorderheader as(
         taxamt,
         freight,
         totaldue,
-        cast(orderdate as timestamp) as orderdate,
-        cast(shipdate as timestamp) as shipdate,
+        cast(cast(orderdate as timestamp) as date) as orderdate,
+        cast(cast(shipdate as timestamp) as date) as shipdate,
     from {{ source('dev_lavino','salesorderheader')}}
 )
 select *
