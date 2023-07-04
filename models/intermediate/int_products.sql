@@ -34,9 +34,18 @@ with
             product.makeflag,
             product.safetystocklevel,
             product.reorderpoint,
-            product_model.product_model_name,
-            product_category.product_category_name,
-            product_subcategory.product_subcategory_name,
+            case 
+                when product_model.product_model_name is null then 'not reported' 
+                else product_model.product_model_name 
+            end as product_model_name,
+            case 
+                when product_category.product_category_name is null then 'not reported' 
+                else product_category.product_category_name
+            end as product_category_name,
+            case 
+                when product_subcategory.product_subcategory_name is null then 'not reported' 
+                else product_subcategory.product_subcategory_name
+            end as product_subcategory_name,
             product.reference_price
         from product
         left join product_subcategory on product.productsubcategoryid = product_subcategory.productsubcategoryid

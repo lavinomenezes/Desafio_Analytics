@@ -14,6 +14,7 @@ with
             salesorderheader.customerid,
             salesorderdetail.productid,
             salesorderheader.creditcardid,
+            salesorderheader.shiptoaddressid,
             case 
                 when salesorderheader.status = 1 then 'In Process'
                 when salesorderheader.status = 2 then 'Approved'
@@ -31,7 +32,7 @@ with
             salesorderheader.freight/(count(salesorderheader.freight) over (partition by salesorderheader.salesorderid)) as freight_per_order,
             salesorderheader.totaldue/(count(salesorderheader.totaldue) over (partition by salesorderheader.salesorderid)) as totaldue_per_order,
 	        cast(salesorderheader.orderdate as timestamp) as orderdate,
-            cast(salesorderheader.shipdate as timestamp) as shipdate,
+            cast(salesorderheader.shipdate as timestamp) as shipdate
         from salesorderheader left join salesorderdetail on salesorderheader.salesorderid = salesorderdetail.salesorderid
     )
 select *

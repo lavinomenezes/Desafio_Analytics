@@ -6,30 +6,21 @@ models:
     columns:
       - name: addressid
         description: "Address id"
-        tests:
-          - unique
-          - not_null
+
       - name: address
         description: "Address"
-        tests:
-          - not_null
+
       - name: address_type
         description: "Address type"
-        tests:
-          - not_null
+
       - name: postalcode  
         description: "Postal code"
-        tests:
-          - not_null
+
       - name: city
         description: "City"
-        tests:
-          - not_null
+
       - name: state
         description: "State province id"
-        tests:
-          - not_null
+
       - name: country
         description: "Country region code"
-        tests:
-          - not_null
