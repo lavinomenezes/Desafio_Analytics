@@ -2,7 +2,6 @@ with
     clients as (
         select *
         from {{ ref('int_clients') }} 
-        where persontype =  'Individual Customer' 
     ),
     remove_duplicates as (
     select
