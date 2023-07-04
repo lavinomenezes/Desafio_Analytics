@@ -7,9 +7,9 @@ with
         select *
         from {{ ref('stg_salesorderdetail') }}
     ),
-    salesorderheadersalesreason as (
+    int_reason as (
         select *
-        from {{ ref('stg_salesorderheadersalesreason') }}	
+        from {{ ref('int_salesreason') }}	
     ),
     join_sales as (
         select
@@ -19,7 +19,7 @@ with
             salesorderdetail.productid,
             salesorderheader.creditcardid,
             salesorderheader.shiptoaddressid,
-            salesorderheadersalesreason.salesreasonid,
+            int_reason.reason_type,
             case 
                 when salesorderheader.status = 1 then 'In Process'
                 when salesorderheader.status = 2 then 'Approved'
@@ -40,7 +40,7 @@ with
             cast(salesorderheader.shipdate as timestamp) as shipdate
         from salesorderheader 
         left join salesorderdetail on salesorderheader.salesorderid = salesorderdetail.salesorderid
-        right join salesorderheadersalesreason on salesorderheader.salesorderid = salesorderheadersalesreason.salesorderid
+        left join int_reason on int_reason.salesorderid = salesorderheader.salesorderid
 
     )
 select *

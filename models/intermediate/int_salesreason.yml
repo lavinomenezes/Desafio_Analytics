@@ -1,0 +1,14 @@
+version: 2
+
+models:
+  - name: int_reasons
+    description: "Sales intermediate reasons"
+    columns:
+      - name: salesorder
+        description: "Sales order id"
+
+      - name: reason_type
+        description: "Reason type"
+
+      - name: name_reason
+        description: "Reason"

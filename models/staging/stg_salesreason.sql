@@ -2,8 +2,8 @@ with
     salesreason as(
         select
             salesreasonid,
-            "name" as reason,
-            reasonType,
+            name as reason,
+            reasontype,
         from {{ source('dev_lavino','salesreason') }}
     )
 select *
