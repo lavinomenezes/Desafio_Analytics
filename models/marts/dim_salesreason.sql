@@ -1,7 +1,7 @@
 with
     salesreason as (
         select *
-        from {{ ref('int_salesreason') }}
+        from {{ ref('stg_salesreason') }}
     ),
     remove_duplicates as (
         select
@@ -12,7 +12,6 @@ with
     transform as (
         select
             cast(TO_HEX(MD5(cast(salesreasonid as string)))as string) as salesreason_sk,
-            salesorderid,
             reason,
             reasontype,
             current_timestamp  as modified_date

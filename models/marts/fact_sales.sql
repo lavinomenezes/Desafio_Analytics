@@ -18,6 +18,7 @@ with
             cast(TO_HEX(MD5(cast(productid as string)))as string) as product_fk,
             cast(TO_HEX(MD5(cast(creditcardid as string)))as string) as creditcard_fk,
             cast(TO_HEX(MD5(cast(shiptoaddressid as string)))as string) as address_fk,
+            cast(TO_HEX(MD5(cast(salesreasonid as string)))as string) as salesreason_fk,
             status,
             orderqty,
             unitprice,

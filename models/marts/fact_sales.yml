@@ -34,6 +34,12 @@ models:
           - relationships:
               to: ref('dim_address')
               field: address_sk
+      - name: salesreason_fk
+        description: "Sales reason sk"
+        tests:
+          - relationships:
+              to: ref('dim_salesreason')
+              field: salesreason_sk
       - name: modified_date
         description: "Sales order modified date"
         tests:
