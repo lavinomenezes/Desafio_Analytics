@@ -22,6 +22,9 @@ models:
       - name: shiptoaddressid
         description: "Ship to address id"
 
+      - name: salesreasonid
+        description: "Sales reason id"
+
       - name: status
         description: "Sales order status"
 
