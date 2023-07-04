@@ -13,7 +13,7 @@ with
         select
             MD5(cast(creditcardid as string)) as creditcard_sk,
             card_type,
-            card_number
+            card_number,
             expmonth,
             expyear,
             current_timestamp  as modified_date

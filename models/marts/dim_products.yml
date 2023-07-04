@@ -4,7 +4,7 @@ models:
   - name: dim_products
     description: "Product data"
     columns:
-      - name: productid
+      - name: product_sk
         description: "Product id"
         tests:
           - unique

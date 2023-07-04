@@ -5,7 +5,7 @@ models:
   - name: dim_salesreason
     description: "Sales reason data" 
     columns:
-      - name: salesreasonid
+      - name: salesreason_sk
         description: "Sales reason id"
         tests:
           - unique

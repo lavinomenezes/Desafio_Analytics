@@ -4,12 +4,12 @@ models:
   - name: dim_creditcard
     description: "Customer credit card dimension data"
     columns:
-      - name: creditcar_sk
+      - name: creditcard_sk
         description: "Credit card id"
         tests:
           - unique
           - not_null
-      - name: cardtype
+      - name: card_type
         description: "Credit card type"
         tests:
           - not_null
