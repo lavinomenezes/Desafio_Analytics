@@ -33,9 +33,18 @@ with
                 WHEN person.persontype = 'VC' THEN 'Vendor'
                 WHEN person.persontype = 'GC' THEN 'General Contact'
             end as persontype,
-            personphone.phonenumber,
-            phonenumbertype.phone_type,
-            emailaddress.person_emailaddress,
+            CASE
+                WHEN personphone.phonenumber is null THEN 'not available'
+                ELSE personphone.phonenumber
+            end as phonenumber,
+            case
+                when phonenumbertype.phone_type is null then 'not available'
+                else phonenumbertype.phone_type
+            end as phone_type,
+            case 
+                when emailaddress.person_emailaddress is null then 'not available'
+                else emailaddress.person_emailaddress
+            end as person_emailaddress,
             from customer  
             left join person  on (customer.personid  = person.businessentityid)
 		    left join personphone  on (customer.personid = personphone.businessentityid)
